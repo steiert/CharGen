@@ -1,0 +1,54 @@
+Planning grounds
+________________
+
+folder:data
+   folder:base
+   folder:classes
+      *folder:'name'
+         file:base
+         file:abilities
+         *file:special'::id'
+   folder:feats
+      *file:'name'
+   file:skills
+   
+folder:characters
+   *folder:'name::id'
+      file:base
+      file:skills
+      file:abilities
+      *file:special'::id'
+
+*=copy for each as needed, may be missing in some cases
+
+make to_string and constructor that takes a string as needed
+
+
+GUI ideas 
+general:
+main menu{ new, open, delete }//may add choice to change system
+	new>details>stats>class>skills>class_options>feats>goto_character_sheet_mode
+	open>load_character>goto_character_sheet_mode
+	delete>list_characters>confirm>return
+In character sheet mode: //starts in general tab
+section bar{ general, skills, equipment, items, special, notes }
+	general{ roll, levelup/gain_exp, modify }
+		roll{ attack, save, skill, custom }
+		levelup/gain_exp{ to_next, specific }(if hit next then goto levelup popups)
+			levelup>class_options>stat_up>skills>class_options>feats>return
+		modify{ change_detail, change_stat, add/remove(ability) } //least important
+	skills{ detail }
+		detail(shows base and all bonuses)
+	equipment{ equip_slot }
+		equip_slot{ unequip, List<equipment>_slot }
+	items{ add/remove, note }//flag currency, give own section for stuff carried(contributes to weight, in item that is carried)
+		add/remove{ add, change_amount, remove_from_list }
+			add>name>type(equipment>(basic)(special>(basic)(nonstandard>slot)>*mods*))(general)>weight>amount>location>return
+				mods>(modify_skill)(modify_save)(modify_attack)(modify_defence)(modify_special)(modify_note)>(repeat)(return)
+		note{ edit }
+	special{ List<special>_classes }
+		<special>_class(customized specialy)
+	notes{ edit }
+
+
+
