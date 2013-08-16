@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="steiert.chargen"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="steiert.chargen.StartActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="steiert.chargen.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="steiert.chargen.LoadChar"
+            android:label="@string/title_activity_load_char" >
+        </activity>
+        <activity
+            android:name="steiert.chargen.NewChar"
+            android:label="@string/title_activity_new_char" >
+        </activity>
+        <activity
+            android:name="steiert.chargen.ViewChar"
+            android:label="@string/title_activity_view_char" >
+        </activity>
+        <activity
+            android:name="steiert.chargen.New_Char_Skills"
+            android:label="@string/title_activity_new__char__skills" >
+        </activity>
+    </application>
+
+</manifest>
